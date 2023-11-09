@@ -1,11 +1,15 @@
 package com.clientui.controller;
 
 import com.clientui.beans.CommandeBean;
+import com.clientui.beans.ExpeditionBean;
 import com.clientui.beans.PaiementBean;
 import com.clientui.beans.ProductBean;
 import com.clientui.proxies.MicroserviceCommandeProxy;
+import com.clientui.proxies.MicroserviceExpeditionProxy;
 import com.clientui.proxies.MicroservicePaiementProxy;
 import com.clientui.proxies.MicroserviceProduitsProxy;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,6 +36,11 @@ public class ClientController {
     @Autowired
     private MicroservicePaiementProxy paiementProxy;
 
+    @Autowired
+    private MicroserviceExpeditionProxy expeditionProxy;
+
+
+    Logger log = LoggerFactory.getLogger(this.getClass());
 
     /*
     * Étape (1)
@@ -42,9 +51,13 @@ public class ClientController {
     @RequestMapping("/")
     public String accueil(Model model){
 
+
+        log.info("Envoi requête vers microservice-produits");
+
         List<ProductBean> produits =  ProduitsProxy.listeDesProduits();
 
         model.addAttribute("produits", produits);
+
 
         return "Accueil";
     }
@@ -120,5 +133,17 @@ public class ClientController {
     private Long numcarte() {
 
         return ThreadLocalRandom.current().nextLong(1000000000000000L,9000000000000000L );
+    }
+
+    //Exercice 2
+    @RequestMapping("/suivi/{id}")
+    public String suivi(@PathVariable int id, Model model){
+
+        ExpeditionBean expedition = expeditionProxy.etatExpedition(id);
+
+        model.addAttribute("expedition", expedition);
+
+        return "Suivi";
+
     }
 }
