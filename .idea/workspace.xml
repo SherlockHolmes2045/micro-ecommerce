@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3c714be-2ba7-4c9e-a862-e51c43cf7fdc" name="Default" comment="Client fonctionnel communiquant avec tous les MS">
-      <change afterPath="$PROJECT_DIR$/config-server-repo/config-server-repo.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server-repo/config-server-repo.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-server-repo/config-server-repo.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -865,7 +863,7 @@
       <workItem from="1699002240657" duration="591000" />
       <workItem from="1699283015034" duration="27776000" />
       <workItem from="1699525153245" duration="1391000" />
-      <workItem from="1699531735527" duration="10947000" />
+      <workItem from="1699531735527" duration="11062000" />
     </task>
     <task id="LOCAL-00001" summary="Premier commit">
       <created>1520797708529</created>
