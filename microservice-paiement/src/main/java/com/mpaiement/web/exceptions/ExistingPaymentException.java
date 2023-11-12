@@ -4,9 +4,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.CONFLICT)
-public class PaiementExistantException extends RuntimeException {
+public class ExistingPaymentException extends RuntimeException {
 
-    public PaiementExistantException(String message) {
+    public ExistingPaymentException(String message) {
         super(message);
     }
 }

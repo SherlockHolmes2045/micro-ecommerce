@@ -5,7 +5,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3c714be-2ba7-4c9e-a862-e51c43cf7fdc" name="Default" comment="Client fonctionnel communiquant avec tous les MS">
-      <change beforePath="$PROJECT_DIR$/config-server-repo/config-server-repo.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-server-repo/config-server-repo.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice-commandes/src/main/java/com/mcommandes/web/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice-commandes/src/main/java/com/mcommandes/web/exceptions/CannotAddOrderException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/web/controller/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientui/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/clientui/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/beans/CommandeBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/beans/OrderBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/beans/PaiementBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/beans/PaymentBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/controller/ClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/proxies/MicroserviceCommandeProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/proxies/OrderMicroserviceProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/proxies/MicroserviceExpeditionProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/proxies/ExpeditionMicroserviceProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/proxies/MicroservicePaiementProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/proxies/PaymentMicroserviceProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/proxies/MicroserviceProduitsProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/proxies/ProductsMicroserviceProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server-repo/config-server-repo.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-commandes/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-commandes/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-commandes/src/main/java/com/mcommandes/dao/CommandesDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-commandes/src/main/java/com/mcommandes/dao/OrderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-commandes/src/main/java/com/mcommandes/model/Commande.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-commandes/src/main/java/com/mcommandes/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-commandes/src/main/java/com/mcommandes/web/controller/CommandeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-commandes/src/main/java/com/mcommandes/web/exceptions/CommandeNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-commandes/src/main/java/com/mcommandes/web/exceptions/OrderNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-commandes/src/main/java/com/mcommandes/web/exceptions/ImpossibleAjouterCommandeException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-expedition/src/main/java/com/mcommerce/microserviceexpedition/controller/ExpeditionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-expedition/src/main/java/com/mcommerce/microserviceexpedition/controller/ExpeditionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-paiement/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-paiement/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/beans/CommandeBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/beans/OrderBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/dao/PaiementDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/dao/PaymentDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/model/Paiement.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/model/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/proxies/MicroserviceCommandeProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/proxies/OrderMicroserviceProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/web/controller/PaiementController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/web/exceptions/PaiementExistantException.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/web/exceptions/ExistingPaymentException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/web/exceptions/PaiementImpossibleException.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/web/exceptions/ImpossiblePaymentException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-produits/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-produits/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-produits/src/main/java/com/mproduits/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-produits/src/main/java/com/mproduits/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-produits/src/main/java/com/mproduits/web/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-produits/src/main/java/com/mproduits/web/controller/ProductController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +217,7 @@
     <treeState />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -428,33 +468,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "D:/micro/4668216-Optimisez-votre-architecture-Microservices/config-server-repo",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/micro/4668216-Optimisez-votre-architecture-Microservices/config-server-repo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "h2"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;h2&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.mpaiement.web.exceptions" />
@@ -863,7 +903,8 @@
       <workItem from="1699002240657" duration="591000" />
       <workItem from="1699283015034" duration="27776000" />
       <workItem from="1699525153245" duration="1391000" />
-      <workItem from="1699531735527" duration="11062000" />
+      <workItem from="1699531735527" duration="11776000" />
+      <workItem from="1699635446337" duration="5695000" />
     </task>
     <task id="LOCAL-00001" summary="Premier commit">
       <created>1520797708529</created>

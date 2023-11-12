@@ -26,28 +26,28 @@ public class ProductController {
 
     Logger log = LoggerFactory.getLogger(this.getClass());
 
-    // Affiche la liste de tous les produits disponibles
+
     @GetMapping(value = "/Produits")
-    public List<Product> listeDesProduits(){
+    public List<Product> productList() {
 
         List<Product> products = productDao.findAll();
 
-        if(products.isEmpty()) throw new ProductNotFoundException("Aucun produit n'est disponible à la vente");
+        if (products.isEmpty()) throw new ProductNotFoundException("Aucun produit n'est disponible à la vente");
 
-        List<Product> listeLimitee = products.subList(0, appProperties.getLimitDeProduits());
+        List<Product> pagedList = products.subList(0, appProperties.getLimitDeProduits());
         log.info("Récupération de la liste des produits");
 
-        return listeLimitee;
+        return pagedList;
 
     }
 
-    //Récuperer un produit par son id
-    @GetMapping( value = "/Produits/{id}")
-    public Optional<Product> recupererUnProduit(@PathVariable int id) {
+    @GetMapping(value = "/Produits/{id}")
+    public Optional<Product> getProduct(@PathVariable int id) {
 
         Optional<Product> product = productDao.findById(id);
 
-        if(!product.isPresent())  throw new ProductNotFoundException("Le produit correspondant à l'id " + id + " n'existe pas");
+        if (!product.isPresent())
+            throw new ProductNotFoundException("Le produit correspondant à l'id " + id + " n'existe pas");
 
         return product;
     }

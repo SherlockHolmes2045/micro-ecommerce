@@ -11,16 +11,14 @@ import java.util.List;
 
 @FeignClient(name = "zuul-server")
 @RibbonClient(name = "microservice-produits")
-public interface MicroserviceProduitsProxy {
+public interface ProductsMicroserviceProxy {
 
     @GetMapping(value = "/microservice-produits/Produits")
-    List<ProductBean> listeDesProduits();
+    List<ProductBean> productList();
 
-    /*
-    * Notez ici la notation @PathVariable("id") qui est différente de celle qu'on utlise dans le contrôleur
-    **/
+
     @GetMapping( value = "/microservice-produits/Produits/{id}")
-    ProductBean recupererUnProduit(@PathVariable("id") int id);
+    ProductBean getProduct(@PathVariable("id") int id);
 
 
 

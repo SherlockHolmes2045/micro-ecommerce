@@ -38,7 +38,7 @@ public class ExpeditionController {
     public Expedition updateExpedition(@RequestBody Expedition expeditionData){
         Optional<Expedition> expedition = expeditionRepository.findById(expeditionData.getId());
 
-        if(!expedition.isPresent())  throw new ExpeditionNotFoundException("L'expedition correspondant à l'id " + expedition.get().getId() + " n'existe pas");
+        if(!expedition.isPresent())  throw new ExpeditionNotFoundException("L'expedition correspondant à l'id " + expeditionData.getId() + " n'existe pas");
         return expeditionRepository.save(expeditionData);
     }
 

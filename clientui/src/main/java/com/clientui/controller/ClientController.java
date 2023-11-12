@@ -1,13 +1,13 @@
 package com.clientui.controller;
 
-import com.clientui.beans.CommandeBean;
+import com.clientui.beans.OrderBean;
 import com.clientui.beans.ExpeditionBean;
-import com.clientui.beans.PaiementBean;
+import com.clientui.beans.PaymentBean;
 import com.clientui.beans.ProductBean;
-import com.clientui.proxies.MicroserviceCommandeProxy;
-import com.clientui.proxies.MicroserviceExpeditionProxy;
-import com.clientui.proxies.MicroservicePaiementProxy;
-import com.clientui.proxies.MicroserviceProduitsProxy;
+import com.clientui.proxies.OrderMicroserviceProxy;
+import com.clientui.proxies.ExpeditionMicroserviceProxy;
+import com.clientui.proxies.PaymentMicroserviceProxy;
+import com.clientui.proxies.ProductsMicroserviceProxy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +17,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
@@ -28,118 +26,94 @@ import java.util.concurrent.ThreadLocalRandom;
 public class ClientController {
 
     @Autowired
-    private MicroserviceProduitsProxy ProduitsProxy;
+    private ProductsMicroserviceProxy productProxy;
 
     @Autowired
-    private MicroserviceCommandeProxy CommandesProxy;
+    private OrderMicroserviceProxy orderProxy;
 
     @Autowired
-    private MicroservicePaiementProxy paiementProxy;
+    private PaymentMicroserviceProxy paymentProxy;
 
     @Autowired
-    private MicroserviceExpeditionProxy expeditionProxy;
+    private ExpeditionMicroserviceProxy expeditionProxy;
 
 
     Logger log = LoggerFactory.getLogger(this.getClass());
 
-    /*
-    * Étape (1)
-    * Opération qui récupère la liste des produits et on les affichent dans la page d'accueil.
-    * Les produits sont récupérés grâce à ProduitsProxy
-    * On fini par rentourner la page Accueil.html à laquelle on passe la liste d'objets "produits" récupérés.
-    * */
     @RequestMapping("/")
-    public String accueil(Model model){
+    public String home(Model model) {
 
 
         log.info("Envoi requête vers microservice-produits");
 
-        List<ProductBean> produits =  ProduitsProxy.listeDesProduits();
+        List<ProductBean> products = productProxy.productList();
 
-        model.addAttribute("produits", produits);
+        model.addAttribute("produits", products);
 
 
         return "Accueil";
     }
 
-    /*
-    * Étape (2)
-    * Opération qui récupère les détails d'un produit
-    * On passe l'objet "produit" récupéré et qui contient les détails en question à  FicheProduit.html
-    * */
+
     @RequestMapping("/details-produit/{id}")
-    public String ficheProduit(@PathVariable int id,  Model model){
+    public String ProductDetails(@PathVariable int id, Model model) {
 
-        ProductBean produit = ProduitsProxy.recupererUnProduit(id);
+        ProductBean product = productProxy.getProduct(id);
 
-        model.addAttribute("produit", produit);
+        model.addAttribute("produit", product);
 
         return "FicheProduit";
     }
 
-    /*
-    * Étape (3) et (4)
-    * Opération qui fait appel au microservice de commande pour placer une commande et récupérer les détails de la commande créée
-    * */
     @RequestMapping(value = "/commander-produit/{idProduit}/{montant}")
-    public String passerCommande(@PathVariable int idProduit, @PathVariable Double montant,  Model model){
+    public String orderProduct(@PathVariable int idProduit, @PathVariable Double montant, Model model) {
 
 
-        CommandeBean commande = new CommandeBean();
+        OrderBean order = new OrderBean();
 
-        //On renseigne les propriétés de l'objet de type CommandeBean que nous avons crée
-        commande.setProductId(idProduit);
-        commande.setQuantite(1);
-        commande.setDateCommande(new Date());
+        order.setProductId(idProduit);
+        order.setQuantite(1);
+        order.setDateCommande(new Date());
 
-        //appel du microservice commandes grâce à Feign et on récupère en retour les détails de la commande créée, notamment son ID (étape 4).
-        CommandeBean commandeAjoutee = CommandesProxy.ajouterCommande(commande);
 
-        //on passe à la vue l'objet commande et le montant de celle-ci afin d'avoir les informations nécessaire pour le paiement
-        model.addAttribute("commande", commandeAjoutee);
+        OrderBean orderAdded = orderProxy.addOrder(order);
+
+        model.addAttribute("commande", orderAdded);
         model.addAttribute("montant", montant);
 
         return "Paiement";
     }
 
-    /*
-    * Étape (5)
-    * Opération qui fait appel au microservice de paiement pour traiter un paiement
-    * */
+
     @RequestMapping(value = "/payer-commande/{idCommande}/{montantCommande}")
-    public String payerCommande(@PathVariable int idCommande, @PathVariable Double montantCommande, Model model){
+    public String payOrder(@PathVariable int idCommande, @PathVariable Double montantCommande, Model model) {
 
-        PaiementBean paiementAExcecuter = new PaiementBean();
+        PaymentBean paymentToExecute = new PaymentBean();
 
-        //on reseigne les détails du produit
-        paiementAExcecuter.setIdCommande(idCommande);
-        paiementAExcecuter.setMontant(montantCommande);
-        paiementAExcecuter.setNumeroCarte(numcarte()); // on génère un numéro au hasard pour simuler une CB
+        paymentToExecute.setIdCommande(idCommande);
+        paymentToExecute.setMontant(montantCommande);
+        paymentToExecute.setNumeroCarte(numcarte()); // random card number
 
-        // On appel le microservice et (étape 7) on récupère le résultat qui est sous forme ResponseEntity<PaiementBean> ce qui va nous permettre de vérifier le code retour.
-        ResponseEntity<PaiementBean> paiement = paiementProxy.payerUneCommande(paiementAExcecuter);
+        ResponseEntity<PaymentBean> payment = paymentProxy.payOrder(paymentToExecute);
 
-        Boolean paiementAccepte = false;
-        //si le code est autre que 201 CREATED, c'est que le paiement n'a pas pu aboutir.
-        if(paiement.getStatusCode() == HttpStatus.CREATED)
-                paiementAccepte = true;
+        boolean paymentSuccessful = payment.getStatusCode() == HttpStatus.CREATED;
 
-        model.addAttribute("paiementOk", paiementAccepte); // on envoi un Boolean paiementOk à la vue
+
+        model.addAttribute("paiementOk", paymentSuccessful); // on envoi un Boolean paiementOk à la vue
 
         return "confirmation";
     }
 
-    //Génére une serie de 16 chiffres au hasard pour simuler vaguement une CB
+    //Generate fake card number
     private Long numcarte() {
 
-        return ThreadLocalRandom.current().nextLong(1000000000000000L,9000000000000000L );
+        return ThreadLocalRandom.current().nextLong(1000000000000000L, 9000000000000000L);
     }
 
-    //Exercice 2
     @RequestMapping("/suivi/{id}")
-    public String suivi(@PathVariable int id, Model model){
+    public String expedition(@PathVariable int id, Model model) {
 
-        ExpeditionBean expedition = expeditionProxy.etatExpedition(id);
+        ExpeditionBean expedition = expeditionProxy.expeditionState(id);
 
         model.addAttribute("expedition", expedition);
 
