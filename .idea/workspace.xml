@@ -5,47 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3c714be-2ba7-4c9e-a862-e51c43cf7fdc" name="Default" comment="Client fonctionnel communiquant avec tous les MS">
-      <change afterPath="$PROJECT_DIR$/microservice-commandes/src/main/java/com/mcommandes/web/controller/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-commandes/src/main/java/com/mcommandes/web/exceptions/CannotAddOrderException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/web/controller/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_25.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientui/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/clientui/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/beans/CommandeBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/beans/OrderBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/beans/PaiementBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/beans/PaymentBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/controller/ClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/proxies/MicroserviceCommandeProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/proxies/OrderMicroserviceProxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/proxies/MicroserviceExpeditionProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/proxies/ExpeditionMicroserviceProxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/proxies/MicroservicePaiementProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/proxies/PaymentMicroserviceProxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/proxies/MicroserviceProduitsProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/proxies/ProductsMicroserviceProxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server-repo/config-server-repo.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-commandes/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-commandes/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-commandes/src/main/java/com/mcommandes/dao/CommandesDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-commandes/src/main/java/com/mcommandes/dao/OrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-commandes/src/main/java/com/mcommandes/model/Commande.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-commandes/src/main/java/com/mcommandes/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-commandes/src/main/java/com/mcommandes/web/controller/CommandeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-commandes/src/main/java/com/mcommandes/web/exceptions/CommandeNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-commandes/src/main/java/com/mcommandes/web/exceptions/OrderNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-commandes/src/main/java/com/mcommandes/web/exceptions/ImpossibleAjouterCommandeException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-expedition/src/main/java/com/mcommerce/microserviceexpedition/controller/ExpeditionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-expedition/src/main/java/com/mcommerce/microserviceexpedition/controller/ExpeditionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-paiement/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-paiement/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/beans/CommandeBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/beans/OrderBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/dao/PaiementDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/dao/PaymentDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/model/Paiement.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/model/Payment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/proxies/MicroserviceCommandeProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/proxies/OrderMicroserviceProxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/web/controller/PaiementController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/web/exceptions/PaiementExistantException.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/web/exceptions/ExistingPaymentException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/web/exceptions/PaiementImpossibleException.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-paiement/src/main/java/com/mpaiement/web/exceptions/ImpossiblePaymentException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-produits/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-produits/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-produits/src/main/java/com/mproduits/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-produits/src/main/java/com/mproduits/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-produits/src/main/java/com/mproduits/web/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-produits/src/main/java/com/mproduits/web/controller/ProductController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -904,7 +867,11 @@
       <workItem from="1699283015034" duration="27776000" />
       <workItem from="1699525153245" duration="1391000" />
       <workItem from="1699531735527" duration="11776000" />
-      <workItem from="1699635446337" duration="5695000" />
+      <workItem from="1699635446337" duration="6513000" />
+      <workItem from="1699853300214" duration="449000" />
+      <workItem from="1700022664413" duration="595000" />
+      <workItem from="1701147636428" duration="1535000" />
+      <workItem from="1701500180106" duration="4423000" />
     </task>
     <task id="LOCAL-00001" summary="Premier commit">
       <created>1520797708529</created>
